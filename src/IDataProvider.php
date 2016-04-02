@@ -4,11 +4,11 @@ namespace Drips\Utils;
 
 interface IDataProvider
 {
-    public function insert($target, array $data);
+    public function insert($target, $data);
 
-    public function update($target, array $data, array $where = array());
+    public function update($target, $data, $where = null);
 
-    public function delete($target, array $where = array());
+    public function delete($target, $where);
 
-    public function select($target, array $where = array());
+    public function select($target, $infos, $where = null);
 }
