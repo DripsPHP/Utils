@@ -25,7 +25,7 @@ Die Datei `vendor/autoload.php` muss included werden.
 
 **Beispiel**
 
-```
+```php
 <?php
 
 include "vendor/autoload.php";
