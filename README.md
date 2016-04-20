@@ -28,31 +28,31 @@ Die Datei `vendor/autoload.php` muss included werden.
 ```
 <?php
 
-`include "vendor/autoload.php";
+include "vendor/autoload.php";
 
-`use Drips\Utils\OutputBuffer;
+use Drips\Utils\OutputBuffer;
 
-`echo"before output Buffer<br/>";
-`$ob = new OutputBuffer();
+echo "before output Buffer<br/>";
+$ob = new OutputBuffer();
 
- // alle folgenden Strings werden in $content gespeichert.`
+// alle folgenden Strings werden in $content gespeichert.
 $ob->start();
 echo "Hello World";
 
-// gibt den Inhalt von $content zurück.`
+// gibt den Inhalt von $content zurück.
 $ob->end();
 echo"after output Buffer<br/>";
 
-// Ausgabe`
-echo $ob→getcontent();
+// Ausgabe
+echo $ob->getContent();
 
-`?>````````
+?>
 ```
 
 erzeugt folgende Ausgabe:
 
 ```
-`before outputBuffer
+before outputBuffer
 after outputBuffer
-Hello World`
+Hello World
 ```
