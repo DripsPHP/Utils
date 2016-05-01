@@ -57,3 +57,16 @@ before outputBuffer
 after outputBuffer
 Hello World
 ```
+
+## Nützliche Funktionen
+
+* `array_extract` - ermöglicht die Filterung eines Arrays
+
+### array_extract
+
+```php
+<?php
+$input = array("a" => 1, "b" => 2, "c" => 3);
+$extract = array("a", "b");
+$result = array_extract($input, $extract); // $result = array("a" => 1, "b" => 2);
+```
