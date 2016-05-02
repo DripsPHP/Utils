@@ -18,13 +18,13 @@ Diese Paket beinhaltet mehrere nützliche (PHP)-Tools, die im folgenden vorgeste
 
 ### OutputBuffer
 
-**Beschreibung**
+#### Beschreibung
 Der Outputbuffer ermöglicht das Speichern von Strings und Ausgeben zu einem späteren Zeitpunkt. Zusätzlich kann der Inhalt mit `getContent()`  abgerufen werden.
 
-**Installation**
+#### Installation
 Die Datei `vendor/autoload.php` muss included werden.
 
-**Beispiel**
+#### Beispiel
 
 ```php
 <?php
