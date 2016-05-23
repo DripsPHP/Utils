@@ -15,3 +15,15 @@ function array_extract(array $array, array $extract)
 {
     return array_intersect_key($array, array_combine($extract, array_pad(array(), count($extract), null)));
 }
+
+/**
+ * Erzeugt beliebige Class-Aliase mithilfe der Funktion class_alias.
+ * Es kann jedoch ein assoziatives Array übergeben werden.
+ * Struktur: ["Alias" => "Original/ClassName"]
+ *
+ * @param  array  $array
+ */
+function class_aliase(array $array)
+{
+    array_map('class_alias', $array, array_keys($array));
+}

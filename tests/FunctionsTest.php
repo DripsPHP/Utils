@@ -3,6 +3,7 @@
 namespace tests;
 
 use PHPUnit_Framework_TestCase;
+use Drips\Utils\OutputBuffer;
 
 class FunctionsTest extends PHPUnit_Framework_TestCase
 {
@@ -12,6 +13,14 @@ class FunctionsTest extends PHPUnit_Framework_TestCase
     public function testArrayExtract($array, $extract, $result)
     {
         $this->assertEquals(array_extract($array, $extract), $result);
+    }
+
+    public function testClassAliase()
+    {
+        $this->assertTrue(class_exists(OutputBuffer::class));
+        $this->assertFalse(class_exists(OB::class));
+        class_aliase(['tests\OB' => OutputBuffer::class]);
+        $this->assertTrue(class_exists(OB::class));
     }
 
     public function arrayProvider()
