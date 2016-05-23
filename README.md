@@ -16,6 +16,47 @@ Diese Paket beinhaltet mehrere nützliche (PHP)-Tools, die im folgenden vorgeste
 * IData Provider
 * Outputbuffer
 
+### Event
+
+#### Beschreibung
+Die Event-Klasse ermöglicht das Registrieren mehrerer Callbacks für verschiedene Events. Wenn eine andere Klasse das Event auslöst, werden die verknüpften Callbacks aufgerufen. Es können auch Parameter für die Callbacks übergeben werden übergeben werden.
+
+#### Installation
+Die Datei `vendor/autoload.php` muss included werden. Danach können Klassen von `Event` erben, um Events zu definieren und auszulösen.
+
+#### Beispiel
+
+```php
+<?php
+
+include "vendor/autoload.php";
+
+use Drips\Utils\Event;
+
+class FileSaver extends Event {
+    
+    function __construct() {
+        self::on("saved", function() {
+	echo "file saved on: ".date("Y-m-d h:m:s",time());
+});
+    }
+    
+    function save() {
+        self::call("saved");
+    }
+    
+}
+
+$saver = new FileSaver();
+$saver::save();
+
+?>
+```
+
+Der obige Code kann z.B. folgende Ausgabe liefern:
+
+`file saved on: 2016-05-23 12:05:46`
+
 ### OutputBuffer
 
 #### Beschreibung
@@ -57,6 +98,7 @@ before outputBuffer
 after outputBuffer
 Hello World
 ```
+
 
 ## Nützliche Funktionen
 
