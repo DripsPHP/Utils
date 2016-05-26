@@ -30,7 +30,7 @@ abstract class Event
      */
     public static function on($event, Closure $callback)
     {
-        static::$events[$event][] = $callback;
+        static::$events[get_called_class()][$event][] = $callback;
     }
 
     /**
@@ -45,8 +45,8 @@ abstract class Event
      */
     protected static function call($event, $args = array())
     {
-        if (array_key_exists($event, static::$events)) {
-            foreach (static::$events[$event] as $callback) {
+        if (array_key_exists(get_called_class(), static::$events) && array_key_exists($event, static::$events[get_called_class()])) {
+            foreach (static::$events[get_called_class()][$event] as $callback) {
                 if (is_array($args)) {
                     $newArgs = call_user_func_array($callback, $args);
                 } else {
