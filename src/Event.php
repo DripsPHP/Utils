@@ -16,7 +16,7 @@ use Closure;
  *
  * Ermöglicht das Abfangen und Auslösen von Events innerhalb einer Klasse
  */
-abstract class Event
+trait Event
 {
     protected static $events = array();
 

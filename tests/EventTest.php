@@ -5,8 +5,9 @@ namespace tests;
 use PHPUnit_Framework_TestCase;
 use Drips\Utils\Event;
 
-class MyClass extends Event
+class MyClass
 {
+    use Event;
     public static $arg = true;
 
     public function __construct($arg){
