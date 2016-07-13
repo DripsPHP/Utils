@@ -5,7 +5,9 @@
  * Date: 04.10.14
  * Time: 17:14.
  */
-namespace Utils;
+namespace Drips Utils;
+
+use Drips\Utils\Classgenerator;
 /**
  * Class ClassGenerator.
  *
