@@ -22,7 +22,7 @@ trait Event
      * @param  string $event Name des Events
      * @param  callable $callback Callback-Funktion, die ausgeführt werden soll
      */
-    public static function on($event, callable $callback)
+    public static function on($event, Callable $callback)
     {
         static::$events[get_called_class()][$event][] = $callback;
     }
