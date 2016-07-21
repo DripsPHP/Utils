@@ -109,8 +109,6 @@ class ClassGenerator
         if ($withPHP) {
             $class .= "<?php\n";
         }
-        // Comment
-        $class .= "/** Generated with Drips ClassGenerator */\n\r";
         // Namespace
         if (isset($this->namespace)) {
             $class .= 'namespace ' . $this->namespace . ";\n\r";
