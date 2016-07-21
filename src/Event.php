@@ -1,45 +1,38 @@
 <?php
 
-/**
- * Created by Prowect
- * Author: Raffael Kessler
- * Date: 03.04.2016 - 18:00.
- * Copyright Prowect.
- */
-
 namespace Drips\Utils;
 
-use Closure;
-
 /**
- * Class Event.
+ * Class Event
  *
- * Ermöglicht das Abfangen und Auslösen von Events innerhalb einer Klasse
+ * PHP-Trait für ein Eventsystem. Eine Klasse kann den Trait verwenden und anschließend Events auslösen (call).
+ * Von außen können Callbacks für bestimmte Events registriert werden (on).
+ * Wird das Event ausgelöst, werden automatisch alle Callbacks ausgeführt.
+ *
+ * @package Drips\Utils
  */
 trait Event
 {
     protected static $events = array();
 
     /**
-     * Registriert eine Callback-Funktion für ein bestimmtes Event. Wird das Event
-     * von der jeweiligen Klasse ausgelöst (call), so wird die übergebene Callback-Funktion
-     * ausgeführt.
+     * Registriert eine Callback-Funktion für ein bestimmtes Event. Wird das Event von der jeweiligen Klasse ausgelöst
+     * (call), so wird die übergebene Callback-Funktion ausgeführt.
      *
-     * @param  string  $event Name des Events
-     * @param  Closure $callback Callback-Funktion, die ausgeführt werden soll
+     * @param  string $event Name des Events
+     * @param  callable $callback Callback-Funktion, die ausgeführt werden soll
      */
-    public static function on($event, Closure $callback)
+    public static function on($event, callable $callback)
     {
         static::$events[get_called_class()][$event][] = $callback;
     }
 
     /**
-     * Dient zum Auslösen von Events innerhalb der jeweiligen Klasse.
-     * Je nach Art des Events, können auch Parameter übergeben werden, welche
-     * wiederum von den jeweiligen Callback-Funktionen geändert werden können.
+     * Dient zum Auslösen von Events innerhalb der jeweiligen Klasse. Je nach Art des Events, können auch Parameter
+     * übergeben werden, welche wiederum von den jeweiligen Callback-Funktionen geändert werden können.
      *
      * @param  string $event Name des Events
-     * @param  array  $args Optional die jeweilige Parameter bzw. der jeweilige Parameter
+     * @param  array $args Optional die jeweiligen Parameter bzw. der jeweilige Parameter, der übergeben werden soll
      *
      * @return mixed das veränderte Argument bzw. die veränderten Argumente
      */

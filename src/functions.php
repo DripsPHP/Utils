@@ -7,8 +7,8 @@
  * Dadurch wird ein neues Array erzeugt: ["a" => 1, "b" => 2]
  * D.h. das Array wird gefiltert bzw. entsprechend extrahiert.
  *
- * @param  array  $array
- * @param  array  $extract
+ * @param  array $array
+ * @param  array $extract
  * @return array
  */
 function array_extract(array $array, array $extract)
@@ -21,7 +21,7 @@ function array_extract(array $array, array $extract)
  * Es kann jedoch ein assoziatives Array übergeben werden.
  * Struktur: ["Alias" => "Original/ClassName"]
  *
- * @param  array  $array
+ * @param  array $array
  */
 function class_aliase(array $array)
 {

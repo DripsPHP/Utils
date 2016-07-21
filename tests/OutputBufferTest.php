@@ -2,10 +2,8 @@
 
 namespace tests;
 
-require_once __DIR__.'/../vendor/autoload.php';
-
-use PHPUnit_Framework_TestCase;
 use Drips\Utils\OutputBuffer;
+use PHPUnit_Framework_TestCase;
 
 class OutputBufferTest extends PHPUnit_Framework_TestCase
 {

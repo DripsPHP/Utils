@@ -1,15 +1,19 @@
 {
-    "name": "drips/utils",
-    "description": "Nützliche Tools für PHP-Anwendungen",
-    "keywords": ["utils"],
-    "license": "MIT",
-    "require": {
-        "php": ">=5.4"
+  "name": "drips/utils",
+  "description": "Nützliche Tools für PHP-Anwendungen",
+  "keywords": [
+    "utils"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Drips\\Utils\\": "src"
     },
-    "autoload": {
-        "psr-4": {
-            "Drips\\Utils\\": "src"
-        },
-        "files": ["src/functions.php"]
-    }
+    "files": [
+      "src/functions.php"
+    ]
+  }
 }
