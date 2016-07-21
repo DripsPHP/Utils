@@ -7,6 +7,6 @@
 
 ## Beschreibung
 
-Diese Paket beinhaltet mehrere nützliche (PHP)-Tools, die im folgenden vorgestellt werden.
+Diese Paket beinhaltet mehrere nützliche (PHP)-Tools, die im Folgenden vorgestellt werden.
 
 Weitere Informationen findest du im [Wiki](https://github.com/Prowect/Utils/wiki).
