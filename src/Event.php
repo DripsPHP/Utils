@@ -9,7 +9,7 @@
 
 namespace Drips\Utils;
 
-use Callback;
+use Callable;
 
 /**
  * Class Event.
@@ -26,9 +26,9 @@ trait Event
      * ausgeführt.
      *
      * @param  string  $event Name des Events
-     * @param  Callback $callback Callback-Funktion, die ausgeführt werden soll
+     * @param  Callable $callback Callback-Funktion, die ausgeführt werden soll
      */
-    public static function on($event, Callback $callback)
+    public static function on($event, Callable $callback)
     {
         static::$events[get_called_class()][$event][] = $callback;
     }
